@@ -39,3 +39,17 @@ def update(request, pk):
     }
     return render(request, 'TaskApp/update.html', context)
 
+
+def delete(request, pk):
+    task = Task.objects.get(id=pk)
+    if request.method == "POST":
+        task.delete()
+        messages.info(request, f"{task} Deleted!")
+        return redirect('/')
+    context = {
+        'task': task,
+        'title': 'Delete Task',
+        'heading': 'Delete Task',
+    }
+    return render(request, 'TaskApp/delete.html', context)
+
