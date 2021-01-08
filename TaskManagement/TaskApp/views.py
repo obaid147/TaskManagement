@@ -10,3 +10,7 @@ def index(request):
         'heading': 'Task Management'
     }
     return render(request, 'TaskApp/index.html', context)
+
+
+def update(request):
+    pass
