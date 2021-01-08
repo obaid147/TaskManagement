@@ -65,7 +65,7 @@
                style="width:80px;">
                 Update
             </a>
-            <a href="#" class="card-link btn btn-danger btn-sm text-white"
+            <a href="{% url 'delete' task.id %}" class="card-link btn btn-danger btn-sm text-white"
                style="width:80px;">
                 Delete
             </a>
@@ -78,7 +78,7 @@
             <h6 class="text-muted">{{ task.created }}</h6>
         </li>
         <li class="list-group-item">
-            <a href="#" class="card-link btn btn-danger btn-sm text-white"
+            <a href="{% url 'delete' task.id %}" class="card-link btn btn-danger btn-sm text-white"
                style="width:80px;">
                 Delete
             </a>
