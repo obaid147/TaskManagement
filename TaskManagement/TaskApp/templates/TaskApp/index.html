@@ -36,11 +36,13 @@
     {% endfor %}
 {% endif %}
 
+<br>
 {% comment %} form here {% endcomment %}
 <form action="" method="post">
     {% csrf_token %}
     {{ form.title|linebreaks }}
-    <input type="submit" value="Update" class="btn btn-info btn-sm text-white">
+    <input type="submit" value="Add Task" class="btn btn-info btn-sm text-white"
+        style="width:260px;">
 </form>
 
 <br>
