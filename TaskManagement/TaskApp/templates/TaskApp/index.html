@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    {% if title %}
+        <title> {{ title }} </title>
+    {% else %}
+        <title> TaskManagement </title>
+    {% endif %}
 </head>
 <body>
-<h1>This is a test.</h1>
+
+<center>
+{% if heading %}
+    {{ heading }}
+{% else %}
+    TASK-MANAGEMENT
+{% endif %}
+
+</center>
+
 </body>
 </html>
