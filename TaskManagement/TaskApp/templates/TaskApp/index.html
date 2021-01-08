@@ -7,16 +7,39 @@
     {% else %}
         <title> TaskManagement </title>
     {% endif %}
+
+    <style>
+html {
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background: #70bg32;
+    background-repeat:no-repeat;
+    background: -webkit-linear-gradient( to left top, #9999ff, #ff6699);
+    background: -moz-linear-gradient( to left top, #9999ff, #ff6699);
+    background: -ms-linear-gradient( to left top, #9999ff, #ff6699);
+    background: -o-linear-gradient( to left top, #9999ff, #ff6699);
+    background: linear-gradient( to left top, #9999ff, #ff6699);
+}
+</style>
+
 </head>
 <body>
 
 <center>
+    {% comment %} Heading {% endcomment %}
 {% if heading %}
-    {{ heading }}
+    <h1>{{ heading }}</h1>
 {% else %}
     TASK-MANAGEMENT
 {% endif %}
+<div>
 
+
+
+</div>
 </center>
 
 </body>
