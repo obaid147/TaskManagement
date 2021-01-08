@@ -11,7 +11,6 @@ def index(request):
         form = TaskForm(request.POST)
         if form.is_valid():
             my_task = form.save()
-            print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
             messages.success(request, f"{my_task} Added!")
         return redirect("/")
     context = {
