@@ -23,20 +23,22 @@
 <center>
     {% comment %} Heading {% endcomment %}
     {% if heading %}
-        <h1>{{ heading }}</h1>
+        <h1>
+            {{ heading }} <hr />
+        </h1>
     {% else %}
-        TASK-UPDATE
+        TASK-UPDATE <hr />
     {% endif %}
 <br>
 
 {% comment %} form here {% endcomment %}
-<p class="card-text">Are you sure you want to delete "{{task}}" task?</p>
 
-<form action="" method="post">
-    {% csrf_token %}
-    <a href="{% url 'index' %}" class="btn btn-info btn-sm">Cancel</a> &nbsp;
-    <input type="submit" value="YES" class="btn btn-info btn-sm">
-</form>
+        <p class="font-weight-normal">Are you sure you want to delete "{{task}}" task?</p>
+        <form action="" method="post">
+            {% csrf_token %}
+            <a href="{% url 'index' %}" class="btn btn-info btn-sm text-white">Cancel</a> &nbsp;
+            <input type="submit" value="YES" class="btn btn-info btn-sm text-white">
+        </form>
 
 </center>
 
