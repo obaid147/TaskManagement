@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% if title %}
         <title> {{ title }} </title>
     {% else %}
@@ -11,9 +11,9 @@
 
     <style>
         h1 {
+            font-size: 40px;
             color: #407191;
             height: 70px;
-            background: linear-gradient( to right top, #cc6699, #6699ff);
         }
     </style>
 
@@ -41,8 +41,9 @@
     <div class="card" style="width: 18rem;">
         <hr />
       <ul class="list-group list-group-flush">
+    {% if task.completed == False %}
         <li class="list-group-item">
-                <h3 class="card-title text-secondary">{{task.id}}. {{ task }}</h3>
+            <h3 class="card-title text-secondary">{{task.id}}. {{ task }}</h3>
         </li>
         <li class="list-group-item">
             <h6 class="text-muted">{{ task.created }}</h6>
@@ -51,16 +52,33 @@
             <a href="#" class="card-link btn btn-primary btn-sm text-white"
                style="width:80px;">
                 Update
-            </a><a href="#" class="card-link btn btn-danger btn-sm text-white"
+            </a>
+            <a href="#" class="card-link btn btn-danger btn-sm text-white"
                style="width:80px;">
                 Delete
             </a>
         </li>
+    {% else %}
+        <li class="list-group-item">
+            <h3 class="card-title text-secondary">&check;{{task.id}}. <strike>{{ task }}</strike></h3>
+        </li>
+        <li class="list-group-item">
+            <h6 class="text-muted">{{ task.created }}</h6>
+        </li>
+        <li class="list-group-item">
+            <a href="#" class="card-link btn btn-danger btn-sm text-white"
+               style="width:80px;">
+                Delete
+            </a>
+        </li>
+    {% endif %}
         <hr />
       </ul>
     </div>
 {% endfor %}
 </center>
 
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 </body>
 </html>
