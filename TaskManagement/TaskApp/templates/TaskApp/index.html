@@ -9,37 +9,40 @@
     {% endif %}
 
     <style>
-html {
-    height: 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background: #70bg32;
-    background-repeat:no-repeat;
-    background: -webkit-linear-gradient( to left top, #9999ff, #ff6699);
-    background: -moz-linear-gradient( to left top, #9999ff, #ff6699);
-    background: -ms-linear-gradient( to left top, #9999ff, #ff6699);
-    background: -o-linear-gradient( to left top, #9999ff, #ff6699);
-    background: linear-gradient( to left top, #9999ff, #ff6699);
-}
-</style>
+        html {
+            height: 100%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background: #70bg32;
+            background-repeat:no-repeat;
+            background: -webkit-linear-gradient( to left bottom, #cc6699, #6699ff);
+            background: -moz-linear-gradient( to left bottom, #cc6699, #6699ff);
+            background: -ms-linear-gradient( to left bottom, #cc6699, #6699ff);
+            background: -o-linear-gradient( to left bottom, #cc6699, #6699ff);
+            background: linear-gradient( to left bottom, #cc6699, #6699ff);
+        }
+
+        h1 {
+            color: #407191;
+            background: linear-gradient( to right top, #cc6699, #6699ff);
+        }
+    </style>
 
 </head>
 <body>
 
 <center>
     {% comment %} Heading {% endcomment %}
-{% if heading %}
-    <h1 class="text-dark bg-light">{{ heading }}</h1>
-{% else %}
-    TASK-MANAGEMENT
-{% endif %}
-<div>
+    {% if heading %}
+    <h1>{{ heading }}</h1>
+    {% else %}
+        TASK-MANAGEMENT
+    {% endif %}
 
 
 
-</div>
 </center>
 
 </body>
