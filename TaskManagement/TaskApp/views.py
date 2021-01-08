@@ -2,4 +2,9 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'TaskApp/index.html')
+
+    context = {
+        'title': 'Manage Tasks',
+        'heading': 'Task Management'
+    }
+    return render(request, 'TaskApp/index.html', context)
