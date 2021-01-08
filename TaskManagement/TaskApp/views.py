@@ -22,5 +22,20 @@ def index(request):
     return render(request, 'TaskApp/index.html', context)
 
 
-def update(request):
-    pass
+def update(request, pk):
+    task = Task.objects.get(id=pk)
+    form = TaskForm(instance=task)
+    if request.method == "POST":
+        form = TaskForm(request.POST, instance=task)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Updated!")
+        return redirect("/")
+
+    context = {
+        'form': form,
+        'title': 'Update-Task',
+        'heading': 'Task Update',
+    }
+    return render(request, 'TaskApp/update.html', context)
+

@@ -61,7 +61,7 @@
             <h6 class="text-muted">{{ task.created }}</h6>
         </li>
         <li class="list-group-item">
-            <a href="#" class="card-link btn btn-primary btn-sm text-white"
+            <a href="{% url 'update' task.id %}" class="card-link btn btn-primary btn-sm text-white"
                style="width:80px;">
                 Update
             </a>
